@@ -12,12 +12,12 @@
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 
 	<script src="http://demos.jquerymobile.com/1.3.2/js/jquery.js"></script>
-	<script src="http://demos.jquerymobile.com/1.3.2/_assets/js/index.js"></script>
+	<!-- <script src="http://demos.jquerymobile.com/1.3.2/_assets/js/index.js"></script> -->
 	<script src="http://demos.jquerymobile.com/1.3.2/js/jquery.mobile-1.3.2.min.js"></script>
 	<script>
 
 
-	if ($(window).width() < 960) {
+/*	if ($(window).width() < 960) {
 		$( document ).on( "pageinit", "#demo-page", function() {
 		    $( document ).on( "swipeleft swiperight", "#demo-page", function( e ) {
 		        // We check if there is no open panel on the page because otherwise
@@ -32,8 +32,9 @@
 		        }
 		    });
 		});
-	}
+	}*/
 
+	/*
 	$(window).resize(function() {
 		if ($(document).width() < 970) {
 			$( document ).on( "pageinit", "#demo-page", function() {
@@ -52,32 +53,8 @@
 			});
 		}
 	});
-    </script>
-	<style>
-		/* Swipe works with mouse as well but often causes text selection. */
-		#demo-page * {
-		    -webkit-user-select: none;
-		    -moz-user-select: none;
-		    -ms-user-select: none;
-		    -o-user-select: none;
-		    user-select: none;
-		}
-		/* Arrow only buttons in the header. */
-		#demo-page .ui-header .ui-btn {
-		    background: none;
-		    border: none;
-		    top: 9px;
-		}
-		#demo-page .ui-header .ui-btn-inner {
-		    border: none;
-		}
-		/* Content styling. */
-		dl { font-family: "Times New Roman", Times, serif; padding: 1em; }
-		dt { font-size: 2em; font-weight: bold; }
-		dt span { font-size: .5em; color: #777; margin-left: .5em; }
-		dd { font-size: 1.25em; margin: 1em 0 0; padding-bottom: 1em; border-bottom: 1px solid #eee; }
-		.back-btn { float: right; margin: 0 2em 1em 0; }
-	</style>
+	*/
+    </script> 
 </head>
 <body>
 	<div data-role="page" id="demo-page" data-theme="d">
@@ -332,7 +309,7 @@
 			</div>
 	    </div><!-- /content -->
 
-		<footer class="footerWrap">
+		<footer class="footerWrap" data-role="footer">
 			<div class="footer">
 				<div class="footerSponsors">
 					<span>Sponsors</span>
