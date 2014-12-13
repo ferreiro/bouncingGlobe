@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <title>Open panel on swipe - jQuery Mobile Demos</title>
+	<link rel="stylesheet"  href="http://demos.jquerymobile.com/1.3.2/css/themes/default/jquery.mobile-1.3.2.min.css">
+	<link rel="stylesheet" href="http://demos.jquerymobile.com/1.3.2/_assets/css/jqm-demos.css">
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+
+	<script src="http://demos.jquerymobile.com/1.3.2/js/jquery.js"></script>
+	<script src="http://demos.jquerymobile.com/1.3.2/_assets/js/index.js"></script>
+	<script src="http://demos.jquerymobile.com/1.3.2/js/jquery.mobile-1.3.2.min.js"></script>
+	<script>
+
+
+	if ($(window).width() < 960) {
+		$( document ).on( "pageinit", "#demo-page", function() {
+		    $( document ).on( "swipeleft swiperight", "#demo-page", function( e ) {
+		        // We check if there is no open panel on the page because otherwise
+		        // a swipe to close the left panel would also open the right panel (and v.v.).
+		        // We do this by checking the data that the framework stores on the page element (panel: open).
+		        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+		            if ( e.type === "swipeleft"  ) {
+		                $( "#right-panel" ).panel( "open" );
+		            } else if ( e.type === "swiperight" ) {
+		                $( "#left-panel" ).panel( "open" );
+		            }
+		        }
+		    });
+		});
+	}
+
+	$(window).resize(function() {
+		if ($(document).width() < 970) {
+			$( document ).on( "pageinit", "#demo-page", function() {
+			    $( document ).on( "swipeleft swiperight", "#demo-page", function( e ) {
+			        // We check if there is no open panel on the page because otherwise
+			        // a swipe to close the left panel would also open the right panel (and v.v.).
+			        // We do this by checking the data that the framework stores on the page element (panel: open).
+			        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+			            if ( e.type === "swipeleft"  ) {
+			                $( "#right-panel" ).panel( "open" );
+			            } else if ( e.type === "swiperight" ) {
+			                $( "#left-panel" ).panel( "open" );
+			            }
+			        }
+			    });
+			});
+		}
+	});
+    </script>
+	<style>
+		/* Swipe works with mouse as well but often causes text selection. */
+		#demo-page * {
+		    -webkit-user-select: none;
+		    -moz-user-select: none;
+		    -ms-user-select: none;
+		    -o-user-select: none;
+		    user-select: none;
+		}
+		/* Arrow only buttons in the header. */
+		#demo-page .ui-header .ui-btn {
+		    background: none;
+		    border: none;
+		    top: 9px;
+		}
+		#demo-page .ui-header .ui-btn-inner {
+		    border: none;
+		}
+		/* Content styling. */
+		dl { font-family: "Times New Roman", Times, serif; padding: 1em; }
+		dt { font-size: 2em; font-weight: bold; }
+		dt span { font-size: .5em; color: #777; margin-left: .5em; }
+		dd { font-size: 1.25em; margin: 1em 0 0; padding-bottom: 1em; border-bottom: 1px solid #eee; }
+		.back-btn { float: right; margin: 0 2em 1em 0; }
+	</style>
+</head>
+<body>
+	<div data-role="page" id="demo-page" data-theme="d">
+
+		<header class="mainHeaderWrap" data-role="header">
+			<div class="mainHeader">
+
+				<div class="hamburguer">
+					<a href="#left-panel">O</a>
+				</div>
+				<div class="logo">
+					<a href="index.html"></a>
+				</div>
+
+				<div class="menu">
+				<ul>
+					<li class="selected">
+						<a href="index.html">
+							Home
+						</a>
+					</li>
+					<li>
+						<a href="cities.html">
+							Cities
+							<span>*</span>
+						</a>
+					</li>
+					<li>
+						<a href="about.html">
+							About the trip
+						</a>
+					</li> 
+				</ul>
+				</div>
+
+				<div class="menuOptionsRight">
+				<ul>
+					<li>
+						<a href="support.html">
+							Support me
+						</a>
+					</li>
+					<li>
+						<a href="contact.html">
+							Contact
+						</a>
+					</li>
+				</ul>
+				</div>
+
+			</div>
+		</header>
+
+		<div class="contentWrap" data-role="content">
+			<div class="content">
+
+				<div class="wherePlaceWrap">
+					<div class="wherePlace">
+						<p class="whereText">
+							Now I'm in <b>London</b>
+						</p>
+						<p class="whereInvite">
+							<a href="">
+								Invite a coffe
+							</a>
+						</p>
+					</div>
+				</div>
+
+				<section class="all_entries">
+
+					<article class="entry" style="background-image:url(http://img0.mxstatic.com/wallpapers/b18c36ae651564ad26290da2c151359a_large.jpeg);">
+						<div class="entryPlay">
+							<a href="single.html?playVideo=1"></a>
+						</div>
+						
+						<div class="entryPlay">
+							<a href="single.html?playVideo=1"></a>
+						</div>
+						<div class="entryLink">
+							<a href="single.html"></a>
+						</div>
+						<div class="entryInfo">
+							<h1>What a city</h1>
+							<p class="entryInfoCity" style="background-color:#134255;"><a href="category.html">Amsterdan</a></p>
+							<p class="entryInfoDate">June 20, 2015</p>
+						</div>
+						<div class="entryGradient">
+							<div class="top"></div>
+							<div class="bottom"></div>
+							<div class="round"></div>
+						</div>						
+					</article><!-- FIn entry -->
+
+					<article class="entry" style="background-image:url(http://fc07.deviantart.net/fs70/i/2014/085/e/c/london_street_wallpaper_hd_b_r_w_by_karmeticpeace-d7bpxin.jpg);">
+						<div class="entryPlay">
+							<a href="single.html?playVideo=1"></a>
+						</div>
+						
+						<div class="entryPlay">
+							<a href="single.html?playVideo=1"></a>
+						</div>
+						<div class="entryLink">
+							<a href="single.html"></a>
+						</div>
+						<div class="entryInfo">
+							<h1>Cosmopolitan city</h1>
+							<p class="entryInfoCity" style="background-color:#531355;"><a href="category.html">London</a></p>
+							<p class="entryInfoDate">May 15, 2015</p>
+						</div>
+						<div class="entryGradient">
+							<div class="top"></div>
+							<div class="bottom"></div>
+							<div class="round"></div>
+						</div>						
+					</article><!-- FIn entry -->
+ 
+
+					<article class="entry" style="background-image:url(http://www.mainriver.de/tn_img/94853_frankfurt_roemer.jpg);">
+						<div class="entryPlay">
+							<a href="single.html?playVideo=1"></a>
+						</div>
+						
+						<div class="entryPlay">
+							<a href="single.html?playVideo=1"></a>
+						</div>
+						<div class="entryLink">
+							<a href="single.html"></a>
+						</div>
+						<div class="entryInfo">
+							<h1>The place of Saussages</h1>
+							<p class="entryInfoCity" style="background-color:#551313;"><a href="category.html">Germany</a></p>
+							<p class="entryInfoDate">April 9, 2015</p>
+						</div>
+						<div class="entryGradient">
+							<div class="top"></div>
+							<div class="bottom"></div>
+							<div class="round"></div>
+						</div>						
+					</article><!-- FIn entry -->
+ 
+
+					<article class="entry" style="background-image:url(http://www.telegraph.co.uk/travel/destination/article127040.ece/ALTERNATES/w460/amsterdamcanal.jpg);">
+						
+						<div class="entryPlay">
+							<a href="single.html?playVideo=1"></a>
+						</div>
+						<div class="entryLink">
+							<a href="single.html"></a>
+						</div>
+						<div class="entryInfo">
+							<h1>Channels</h1>
+							<p class="entryInfoCity" style="background-color:#97550e;"><a href="category.html">Amsterdam</a></p>
+							<p class="entryInfoDate">March 9, 2015</p>
+						</div>
+						<div class="entryGradient">
+							<div class="top"></div>
+							<div class="bottom"></div>
+							<div class="round"></div>
+						</div>						
+					</article><!-- FIn entry -->
+
+					<article class="entry" style="background-image:url( );">
+						
+						<div class="entryPlay">
+							<a href="single.html?playVideo=1"></a>
+						</div>
+						<div class="entryLink">
+							<a href="single.html"></a>
+						</div>
+						<div class="entryInfo">
+							<h1>Title</h1>
+							<p class="entryInfoCity" style="background-color:#97550e;"><a href="category.html">City</a></p>
+							<p class="entryInfoDate">Date</p>
+						</div>
+						<div class="entryGradient">
+							<div class="top"></div>
+							<div class="bottom"></div>
+							<div class="round"></div>
+						</div>						
+					</article><!-- FIn entry -->
+
+					<article class="entry" style="background-image:url( );">
+						
+						<div class="entryPlay">
+							<a href="single.html?playVideo=1"></a>
+						</div>
+						<div class="entryLink">
+							<a href="single.html"></a>
+						</div>
+						<div class="entryInfo">
+							<h1>Title</h1>
+							<p class="entryInfoCity" style="background-color:#97550e;"><a href="category.html">City</a></p>
+							<p class="entryInfoDate">Date</p>
+						</div>
+						<div class="entryGradient">
+							<div class="top"></div>
+							<div class="bottom"></div>
+							<div class="round"></div>
+						</div>						
+					</article><!-- FIn entry -->
+
+					<article class="entry" style="background-image:url( );">
+						
+						<div class="entryPlay">
+							<a href="single.html?playVideo=1"></a>
+						</div>
+						<div class="entryLink">
+							<a href="single.html"></a>
+						</div>
+						<div class="entryInfo">
+							<h1>Title</h1>
+							<p class="entryInfoCity" style="background-color:#97550e;"><a href="category.html">City</a></p>
+							<p class="entryInfoDate">Date</p>
+						</div>
+						<div class="entryGradient">
+							<div class="top"></div>
+							<div class="bottom"></div>
+							<div class="round"></div>
+						</div>						
+					</article><!-- FIn entry -->
+
+					<article class="entry" id="last" style="background-image:url( );">
+						
+						<div class="entryPlay">
+							<a href="single.html?playVideo=1"></a>
+						</div>
+						<div class="entryLink">
+							<a href="single.html"></a>
+						</div>
+						<div class="entryInfo">
+							<h1>Title</h1>
+							<p class="entryInfoCity" style="background-color:#97550e;"><a href="category.html">City</a></p>
+							<p class="entryInfoDate">Date</p>
+						</div>
+						<div class="entryGradient">
+							<div class="top"></div>
+							<div class="bottom"></div>
+							<div class="round"></div>
+						</div>						
+					</article><!-- FIn entry -->
+
+					<div class="load_more">
+						<a href="">Load more</a>
+					</div>
+ 
+				</section>
+
+
+
+
+			</div>
+	    </div><!-- /content -->
+
+		<footer class="footerWrap">
+			<div class="footer">
+				<div class="footerSponsors">
+					<span>Sponsors</span>
+					<ul class="footerSponsorsList">
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="footerSponsors">
+					<span>Web design and programming</span>
+					<ul class="footerSponsorsList">
+						<li>
+							<a href="#"></a>
+						</li> 
+					</ul>
+				</div>
+
+				<div class="footerLinks">
+					<p>&copy; 2015 - BAGlobe</p>
+					<a href="contact.html">Contact</a>
+					<a href="support.html">Support me</a>
+				</div>
+
+			</div>
+		</footer>
+
+
+
+
+	    <div data-role="panel" id="left-panel" data-theme="b">
+
+	        <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+ 			Lateral menu
+
+	    </div><!-- /panel -->
+
+	</div>
+
+	<script src='static/js/effects.js'></script>
+</body>
+</html>
