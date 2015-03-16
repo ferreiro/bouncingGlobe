@@ -27,6 +27,9 @@ h1, h2, h3, h4, h5, a, p
 	display:inline-block; 
 	z-index: 10;
 	border:0 !important;
+	position: fixed;
+	top: 0;
+	z-index: 100;
 }
 .mainHeader {
 	margin: 10px 1em; 
@@ -47,13 +50,14 @@ h1, h2, h3, h4, h5, a, p
 
 }
 .logo {
-	width: 200px;
+	width: 235px;
 	height: 30px;
 	display: inline-block;
 	background: url(static/images/logo3.png) no-repeat;
 	background-size: auto 100%;
 	margin-left: 10px;
 	position: relative;
+	margin-top: 3px;
 }
 .logo a {
 	width: 100%;
@@ -118,12 +122,17 @@ h1, h2, h3, h4, h5, a, p
 .menuOptionsRight ul li a,
 .menu ul li a {
 	font-size: 1.2em;
-	font-weight: 300 !important;
+	font-weight: 500 !important;
 	margin: 0 !important;
 	padding:11px 20px !important;
-	padding-top: 17px !important; 
+	padding-top: 16px !important; 
+	padding-bottom: 10px !important; 
 	float: left;
 	color: rgba(255,255,255,0.8) !important;
+}
+.menuOptionsRight ul li a:hover,
+.menu ul li a:hover {
+	background: #1070b9;
 }
 .menuOptionsRight ul li.selected,
 .menu ul li.selected {
@@ -141,6 +150,7 @@ h1, h2, h3, h4, h5, a, p
 .contentWrap {
 	margin:0; 
 	padding:0;
+	margin-top: 50px;
 }
 .entry {
 	width: 100%;
@@ -231,6 +241,7 @@ h1, h2, h3, h4, h5, a, p
 }
 .entryInfoCity  a {
 	padding: 4px 7px;
+	padding: 9px;
 	color: rgba(255,255,255, 0.9) !important;
 	display: inline-block;
 }
@@ -530,9 +541,16 @@ h1, h2, h3, h4, h5, a, p
 	.content {
 		position: relative;
 	}
+	.entry {
+		width: 33.33%;
+		height: 240px;
+	}
 	.entry:first-child {
 		width: 100%;
 		height: 380px;
+	}  
+	.entry:last-child {
+		display: none !important;
 	}  
 	.entry:first-child .entryPlay {
 		width: 80px;
