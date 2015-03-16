@@ -522,29 +522,28 @@ h1, h2, h3, h4, h5, a, p
 		margin-left: 3em;
 		margin-right: 3em;
 	}
-	.mainHeader
-	{
+	.mainHeader {
 		margin-top: 10px; 
 		margin-bottom: 10px; 
 	}
-	.wherePlaceWrap
-	{
+	.wherePlaceWrap {
 		margin-bottom: -5px;
 		font-size: 2em;
 		background: transparent;
 	}
-	.wherePlaceWrap a
-	{
+	.wherePlaceWrap a {
 		padding-left:15px;
 		padding-right: 15px; 
 	}
 	.content {
 		position: relative;
 	}
+	/*
 	.entry {
 		width: 33.33%;
 		height: 240px;
 	}
+	*/
 	.entry:first-child {
 		width: 100%;
 		height: 380px;
